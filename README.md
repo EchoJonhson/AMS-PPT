@@ -2,14 +2,16 @@
 
 Advanced Materials Science 课程资料，包含课件、作业、课堂录音和对应的 TXT 转写文本。录音及转写文本位于各课程的 `Recording/日期/` 目录。
 
+GitHub 仓库：[EchoJonhson/AMS-PPT](https://github.com/EchoJonhson/AMS-PPT)。原 [GitCode 仓库](https://gitcode.com/GPR/AMS-PPT) 保留此前版本；两处仓库不会自动同步。GitHub 版本包含 4 份原始 WAV，以及 9 月 8 日录音的无损 FLAC 副本。
+
 ## 音频文件限制与保存方式
 
-以下限制依据本仓库在 **2026 年 9 月 16 日**的实际上传结果记录；平台或仓库设置调整后可能变化。
+GitHub 普通 Git 文件限制见[官方说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)。此前 GitCode 的上传情况记录于 **2026 年 9 月 16 日**；GitHub 版本于 **2026 年 9 月 18 日**补充原始 WAV 并更新下载说明。
 
 - **普通 Git 上传的单文件上限为 100 MiB，即 104,857,600 字节。** 超过这个大小的原始 WAV 会被本仓库服务器拒绝；拆成多次提交也不会改变单文件限制。100 MiB 约等于十进制的 104.9 MB。
 - **Git LFS 用于保存较大的 WAV。** Git 仓库中记录的是小型指针文件，实际音频存放在 LFS 服务中。下载时需要取得音频实体，只有指针无法播放。本仓库已配置 `*.wav` 使用 LFS；LFS 仍受平台自身的存储、流量及网络条件约束。
-- **9 月 8 日录音以无损 FLAC 提供。** 原 WAV 为 192,291,868 字节，LFS 上传多次中断；无损压缩后的 FLAC 为 100,481,063 字节（约 95.8 MiB），已通过普通 Git 上传。完整解码后的音频样本与原 WAV 完全一致，保留 16,000 Hz、16 位、单声道。
-- **9 月 8 日原始 WAV 不在远端主分支中。** 原文件完整保留在上传者本地，并添加了精确的忽略规则；下载者请使用同名 FLAC。其余 3 份 WAV 继续使用 LFS，原有 MP3 和 TXT 通过普通 Git 保存。
+- **9 月 8 日录音同时提供原始 WAV 和无损 FLAC。** 原 WAV 为 192,291,868 字节，在 GitHub 通过 LFS 保存；无损压缩后的 FLAC 为 100,481,063 字节（约 95.8 MiB），通过普通 Git 保存。完整解码后的音频样本与原 WAV 完全一致，保留 16,000 Hz、16 位、单声道。
+- **全部 4 份原始 WAV 均使用 LFS。** 此前 GitCode 上传 9 月 8 日 WAV 多次中断，因此旧版仅提供同名 FLAC；GitHub 版本已取消该 WAV 的忽略规则。MP3、FLAC 和 TXT 通过普通 Git 保存。
 
 FLAC 是可以直接播放的无损音频格式，无需像 ZIP 一样解压。它改变文件封装和存储体积，不丢失音频样本。详见 [FLAC 官方介绍](https://xiph.org/flac/)和 [9 月 8 日音频说明](<AMSC5720_Advanced Materials Synthesis/Recording/9.8/音频说明.md>)。
 
@@ -22,8 +24,11 @@ FLAC 是可以直接播放的无损音频格式，无需像 ZIP 一样解压。�
 | AMSC5710 材料表征 | 9 月 7 日 | [1788755850655.wav](<AMSC5710_Advanced Materials Characterization/Recording/9.7/1788755850655.wav>) | 231.4 MiB | Git LFS | [TXT](<AMSC5710_Advanced Materials Characterization/Recording/9.7/基础同传-1.txt>) |
 | AMSC5710 材料表征 | 9 月 14 日 | [1789360274975.wav](<AMSC5710_Advanced Materials Characterization/Recording/9.14/1789360274975.wav>) | 218.3 MiB | Git LFS | [TXT](<AMSC5710_Advanced Materials Characterization/Recording/9.14/基础同传-1(3).txt>) |
 | AMSC5720 材料合成 | 9 月 8 日 | [1788863889187.flac](<AMSC5720_Advanced Materials Synthesis/Recording/9.8/1788863889187.flac>) | 95.8 MiB | 普通 Git；无损 FLAC | [TXT](<AMSC5720_Advanced Materials Synthesis/Recording/9.8/基础同传-1(1).txt>) |
+| AMSC5720 材料合成 | 9 月 8 日 | [1788863889187.wav](<AMSC5720_Advanced Materials Synthesis/Recording/9.8/1788863889187.wav>) | 183.4 MiB | Git LFS；原始 WAV | [TXT](<AMSC5720_Advanced Materials Synthesis/Recording/9.8/基础同传-1(1).txt>) |
 | AMSC5720 材料合成 | 9 月 16 日 | [9.16.mp3](<AMSC5720_Advanced Materials Synthesis/Recording/9.16/9.16.mp3>) | 16.8 MiB | 普通 Git | [TXT](<AMSC5720_Advanced Materials Synthesis/Recording/9.16/9.16.txt>) |
 | AMSC5730 前沿材料 | 9 月 10 日 | [1789037676212.wav](<AMSC5730_Frontiers in Advanced Materials/Recording/9.10/1789037676212.wav>) | 180.4 MiB | Git LFS | [TXT](<AMSC5730_Frontiers in Advanced Materials/Recording/9.10/基础同传-1(2).txt>) |
+| AMSC5730 前沿材料 | 9 月 17 日 | [录音_2026-09-17T14-53-45.mp3](<AMSC5730_Frontiers in Advanced Materials/Recording/9.17/录音_2026-09-17T14-53-45.mp3>) | 37.2 MiB | 普通 Git | [当日两份 TXT](<AMSC5730_Frontiers in Advanced Materials/Recording/9.17/>) |
+| AMSC5730 前沿材料 | 9 月 17 日 | [录音_2026-09-17T14-54-06.mp3](<AMSC5730_Frontiers in Advanced Materials/Recording/9.17/录音_2026-09-17T14-54-06.mp3>) | 23.1 MiB | 普通 Git | [当日两份 TXT](<AMSC5730_Frontiers in Advanced Materials/Recording/9.17/>) |
 
 ## 如何下载
 
@@ -34,14 +39,14 @@ FLAC 是可以直接播放的无损音频格式，无需像 ZIP 一样解压。�
 ```sh
 git lfs version
 git lfs install
-git clone https://gitcode.com/GPR/AMS-PPT.git
+git clone https://github.com/EchoJonhson/AMS-PPT.git
 cd AMS-PPT
 git lfs pull
 ```
 
 `git lfs version` 用于检查 LFS 程序是否已安装；`git lfs install` 配置 Git 所需的过滤器和钩子，本身不负责下载安装程序。正常情况下，克隆时会自动下载 LFS 音频；最后的 `git lfs pull` 用于补齐当前版本需要的 LFS 文件。
 
-下载结束后，在上表对应的 `Recording` 子目录中打开音频。若平台提示登录，请使用具有仓库访问权限的 GitCode 账号完成认证。
+下载结束后，在上表对应的 `Recording` 子目录中打开音频。若平台提示登录，请使用具有仓库访问权限的 GitHub 账号完成认证。
 
 ### 已经克隆过仓库，补齐录音或更新资料
 
@@ -64,7 +69,7 @@ git lfs pull --include="AMSC5710_Advanced Materials Characterization/Recording/9
 
 只需要某份录音或 TXT 时，可以先点击上表链接，在文件页面使用平台提供的文件下载入口。对于 WAV，需确认下载的是完整的 LFS 音频实体；如果页面只展示指针或未提供音频实体下载，请使用上面的 Git LFS 方法。
 
-**不要仅凭“下载 ZIP”完成，就认定所有 WAV 已下载。** 仓库压缩包是否包含 LFS 实体取决于平台的实现与设置。下载后请检查 WAV 大小：本仓库的 3 份 WAV 均有约 180–231 MiB。若文件仅约 130 字节，或用文本编辑器打开后以这一行开头，取得的是 LFS 指针：
+**不要仅凭“下载 ZIP”完成，就认定所有 WAV 已下载。** 仓库压缩包是否包含 LFS 实体取决于平台的实现与设置。下载后请检查 WAV 大小：本仓库的 4 份 WAV 均有约 180–231 MiB。若文件仅约 130 字节，或用文本编辑器打开后以这一行开头，取得的是 LFS 指针：
 
 ```text
 version https://git-lfs.github.com/spec/v1
@@ -101,7 +106,7 @@ ffmpeg -n -i "1788863889187.flac" -c:a pcm_s16le "1788863889187-decoded.wav"
 | WAV 文件很小，内容是三行指针文本 | 在 Git 克隆目录内执行 `git lfs pull`，下载音频实体。 |
 | LFS 下载中断、连接超时 | 网络恢复后重试 `git lfs pull`；也可用上面的 `--include` 命令逐份下载。 |
 | FLAC 无法被默认播放器打开 | 换用支持 FLAC 的播放器，或按上述命令解码为 WAV。 |
-| 找不到 9 月 8 日的原始 WAV | 该日期在远端提供的是同名无损 FLAC；原始 WAV 仅保留在上传者本地。 |
+| 找不到 9 月 8 日的原始 WAV | 从本页列出的 GitHub 仓库更新并执行 `git lfs pull`；旧 GitCode 版本仅提供同名无损 FLAC。 |
 | 网页显示大文件无法预览 | 使用文件下载入口或 Git／Git LFS 下载，再在本地打开。 |
 
 9 月 8 日 FLAC 的 SHA-256 为：
@@ -116,6 +121,6 @@ e55407762770ec52e605c29295c61dc4c8021d1c0fc68e57451e3a8da6965a29
 Get-FileHash -Algorithm SHA256 -LiteralPath "AMSC5720_Advanced Materials Synthesis/Recording/9.8/1788863889187.flac"
 ```
 
-输出的哈希应与上面一致，字母大小写不影响比较。该文件及 3 份 LFS WAV 已在 2026 年 9 月 16 日完成远端完整下载与 SHA-256 校验。
+输出的哈希应与上面一致，字母大小写不影响比较。该 FLAC 及先前的 3 份 LFS WAV 已在 2026 年 9 月 16 日完成 GitCode 远端完整下载与 SHA-256 校验；此记录不代表后续平台的校验结果。
 
 参考：[Git LFS 官方说明](https://git-lfs.com/)、[git lfs pull 官方文档](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-pull.adoc)、[FLAC 格式说明](https://xiph.org/flac/)、[FFmpeg 命令文档](https://ffmpeg.org/ffmpeg.html)。
