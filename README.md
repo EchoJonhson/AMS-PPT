@@ -2,7 +2,30 @@
 
 Advanced Materials Science 课程资料，包含课件、作业、课堂录音和对应的 TXT 转写文本。录音及转写文本位于各课程的 `Recording/日期/` 目录。
 
-GitHub 仓库：[EchoJonhson/AMS-PPT](https://github.com/EchoJonhson/AMS-PPT)。原 [GitCode 仓库](https://gitcode.com/GPR/AMS-PPT) 保留此前版本；两处仓库不会自动同步。GitHub 版本包含 4 份原始 WAV，以及 9 月 8 日录音的无损 FLAC 副本。
+GitHub 主仓库：[EchoJonhson/AMS-PPT](https://github.com/EchoJonhson/AMS-PPT)。[GitCode 仓库](https://gitcode.com/GPR/AMS-PPT) 已启用从 GitHub 拉取的 Pull 镜像，关闭强制覆盖分叉分支。日常更新只推送至 GitHub，由 GitCode 拉取提交和普通文件。
+
+GitHub 包含全部 4 份原始 WAV，以及 9 月 8 日录音的无损 FLAC 副本。**Git 提交同步成功不代表 LFS 音频实体已同步。** 2026 年 9 月 18 日实测，GitCode 已同步普通文件与 LFS 指针，但 9 月 8 日 WAV 实体仍返回 404；完整录音请从 GitHub 下载，或使用 GitCode 中的同名无损 FLAC。
+
+## 本地更新与镜像同步
+
+在本地仓库目录执行：
+
+```sh
+git add -A
+git commit -m "更新课程资料"
+git push origin main
+```
+
+本机 `origin` 指向 GitHub。推送会通过 Git LFS 钩子上传新增的 WAV 实体，再提交分支更新；GitCode 作为 Pull 镜像接收后续同步。不要继续使用此前的 `git push both main`，也不要直接向 GitCode 镜像推送。
+
+可以在 [GitCode 镜像设置](https://gitcode.com/GPR/AMS-PPT/setting/mirror) 查看同步结果，必要时使用“立即同步”。使用 GitHub 个人令牌配置镜像时，令牌过期或撤销后需要更新认证。
+
+可用以下命令核对两边 `main` 的提交号；音频实体还需要单独下载核验：
+
+```sh
+git ls-remote https://github.com/EchoJonhson/AMS-PPT.git refs/heads/main
+git ls-remote https://gitcode.com/GPR/AMS-PPT.git refs/heads/main
+```
 
 ## 音频文件限制与保存方式
 
@@ -106,7 +129,7 @@ ffmpeg -n -i "1788863889187.flac" -c:a pcm_s16le "1788863889187-decoded.wav"
 | WAV 文件很小，内容是三行指针文本 | 在 Git 克隆目录内执行 `git lfs pull`，下载音频实体。 |
 | LFS 下载中断、连接超时 | 网络恢复后重试 `git lfs pull`；也可用上面的 `--include` 命令逐份下载。 |
 | FLAC 无法被默认播放器打开 | 换用支持 FLAC 的播放器，或按上述命令解码为 WAV。 |
-| 找不到 9 月 8 日的原始 WAV | 从本页列出的 GitHub 仓库更新并执行 `git lfs pull`；旧 GitCode 版本仅提供同名无损 FLAC。 |
+| GitCode 的 9 月 8 日 WAV 下载返回 404 | 本次 Pull 镜像未复制该 LFS 实体；从 GitHub 克隆并执行 `git lfs pull`，或下载 GitCode 中的同名无损 FLAC。 |
 | 网页显示大文件无法预览 | 使用文件下载入口或 Git／Git LFS 下载，再在本地打开。 |
 
 9 月 8 日 FLAC 的 SHA-256 为：
