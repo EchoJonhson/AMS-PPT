@@ -1,2 +1,5 @@
 # All course materials and original recordings are tracked.
 # WAV files use Git LFS; see .gitattributes.
+
+# macOS Finder metadata
+.DS_Store
